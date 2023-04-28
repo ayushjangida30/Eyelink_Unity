@@ -55,7 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Button\Button_Start_Trial.cs" />
+     <Compile Include="Assets\Scripts\Button\End_Task_Button.cs" />
+     <Compile Include="Assets\Scripts\Button\End_Trial.cs" />
      <Compile Include="Assets\Scripts\ELMain.cs" />
+     <Compile Include="Assets\Scripts\Experiment.cs" />
      <Compile Include="Assets\Scripts\GetCurrentEyeMovementType.cs" />
      <Compile Include="Assets\Scripts\Trial.cs" />
      <None Include="Assets\EyeLink_Data.txt" />

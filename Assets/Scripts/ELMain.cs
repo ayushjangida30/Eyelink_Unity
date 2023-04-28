@@ -106,8 +106,8 @@ namespace elconnect
             //     elutil = null;
             // }
 
-            writer.WriteLine(tempString);
-            writer.Close();
+            // writer.WriteLine(tempString);
+            // writer.Close();
         }
     }
 }
