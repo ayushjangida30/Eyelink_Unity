@@ -66,14 +66,23 @@
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Recorder.Editor">
+ <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder">
+ <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder.Base">
+ <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Eye_Tracker/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
