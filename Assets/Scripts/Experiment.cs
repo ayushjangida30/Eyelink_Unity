@@ -54,8 +54,11 @@ public class Experiment : MonoBehaviour
         eye = (SREYELINKLib.EL_EYE)el.eyeAvailable();
         if (eye == SREYELINKLib.EL_EYE.EL_BINOCULAR)    eye = SREYELINKLib.EL_EYE.EL_LEFT;
 
+        // Get Recorder Window
         recorderWindow = GetRecorderWindow();
 
+
+        // Start recorder
         if(!recorderWindow.IsRecording())    {
             recorderWindow.StartRecording();
             IsRecording = true;
@@ -65,29 +68,33 @@ public class Experiment : MonoBehaviour
     }
 
     public void End_Recording(string str)  {
-        // Stop Recording
+        // Stop Eye-Tracker Recording
         el.stopRecording();
         el.setOfflineMode();
         elutil.pumpDelay(500);
         el.closeDataFile();
 
-        // If el.isConnected <> -1 Then 'Skip file transfer if in dummy mode.
+        // Stop Unity Recorder
 	    el.receiveDataFile("trial_4.edf", "./Results/" + "Video_Trial_2.edf");
         if(recorderWindow.IsRecording())    {
             recorderWindow.StopRecording();
             IsRecording = false;
         }
+
+        // Converting Unity Recorder filename to specified filename
         string filePath = Application.dataPath + "/Recordings/Trial_5.mp4";   
         print(Application.dataPath + "/Recordings/Rec_1.mp4");
         string newFilePath = Application.dataPath + "/Recordings/Rec_28.mp4"; 
         File.Move(filePath, newFilePath);
     }
 
+    // Interest Period Start message
     public void Start_Trial(string str)   {
         el.sendMessage(str);
         
     }
 
+    // Interest Period End message
     public void End_Trial(string str)   {
         el.sendMessage(str);
     }
@@ -95,7 +102,10 @@ public class Experiment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        el.sendMessage("!V VFRAME " + i++ + " 0 89 C:/Eye_Tracker/Assets/Recordings/Rec_28.mp4 resize 1680 1050");
+        // If Condition to sync VFRAME commands with eye-tracker data
+        if(recorderWindow.IsRecording())    {
+            el.sendMessage("!V VFRAME " + i++ + " 0 89 C:/Eye_Tracker/Assets/Recordings/Rec_28.mp4 resize 1680 1050");
+        }
     }
 
 
